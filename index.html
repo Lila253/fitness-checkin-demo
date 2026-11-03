@@ -2,19 +2,23 @@
 <html lang="zh-CN" data-visualize-standalone>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>练习日 · 黑白训练面板</title>
 <style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 
-</head>
+<style>
+html,body { margin:0; padding:0; min-height:100dvh; overflow:hidden; }
+body { display:grid; place-items:center; background:#ececec; }
+iframe { width:100%; height:min(874px,100dvh) !important; }
+</style></head>
 <body>
 <iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="练习日 · 黑白训练面板" data-srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;zh-CN&quot; data-visualize-standalone&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, viewport-fit=cover&quot;&gt;
 &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 &lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
 &lt;title&gt;练习日 · 黑白训练面板&lt;/title&gt;
@@ -1501,7 +1505,15 @@ svg.lucide {
 }
 
 html&gt;body{padding:0}&lt;/style&gt;
-&lt;/head&gt;
+&lt;style&gt;
+html,body { height:100%; margin:0; padding:0; overflow:hidden; }
+#fitness-mono { --m-frame-height:min(874px,100dvh); }
+@media(max-width:430px) {
+  html[data-visualize-standalone] #fitness-mono .m-phone { border:0; border-radius:0; }
+  html[data-visualize-standalone] #fitness-mono .m-appbar { padding-top:calc(16px + env(safe-area-inset-top,0px)); }
+  html[data-visualize-standalone] #fitness-mono .m-homebar { height:max(19px,env(safe-area-inset-bottom,0px)); }
+}
+&lt;/style&gt;&lt;/head&gt;
 &lt;body&gt;
 &lt;script type=&quot;application/json&quot; id=&quot;codex-visualization-widget-state&quot;&gt;__CODEX_VISUALIZATION_WIDGET_STATE__&lt;/script&gt;
 &lt;script&gt;(() =&gt; {
@@ -1805,8 +1817,8 @@ html&gt;body{padding:0}&lt;/style&gt;
 &lt;/div&gt;
 &lt;style&gt;
 #fitness-mono { width:100%; }
-#fitness-mono .m-stage { display:flex; justify-content:center; align-items:flex-start; padding:18px 0 24px; }
-#fitness-mono .m-phone { --m-bg:#ececec; --m-paper:#ffffff; --m-ink:#111111; --m-muted:#686868; --m-line:#d7d7d7; --m-darkline:#383838; --m-onink:#ffffff; --m-ondark:#bcbcbc; --m-fill:#bdbdbd; --m-soft:#f5f5f5; --m-sans:&quot;PingFang SC&quot;,&quot;Microsoft YaHei UI&quot;,&quot;Segoe UI&quot;,sans-serif; --m-numbers:&quot;Bahnschrift&quot;,&quot;Arial Narrow&quot;,&quot;Consolas&quot;,monospace; width:100%; max-width:390px; min-height:844px; display:flex; flex-direction:column; background:var(--m-bg); color:var(--m-ink); border:1px solid var(--m-line); border-radius:30px; box-sizing:border-box; font:14px/1.55 var(--m-sans); color-scheme:light; }
+#fitness-mono .m-stage { display:flex; justify-content:center; align-items:flex-start; }
+#fitness-mono .m-phone { --m-bg:#ececec; --m-paper:#ffffff; --m-ink:#111111; --m-muted:#686868; --m-line:#d7d7d7; --m-darkline:#383838; --m-onink:#ffffff; --m-ondark:#bcbcbc; --m-fill:#bdbdbd; --m-soft:#f5f5f5; --m-sans:&quot;PingFang SC&quot;,&quot;Microsoft YaHei UI&quot;,&quot;Segoe UI&quot;,sans-serif; --m-numbers:&quot;Bahnschrift&quot;,&quot;Arial Narrow&quot;,&quot;Consolas&quot;,monospace; width:100%; max-width:402px; height:var(--m-frame-height,874px); min-height:0; display:flex; flex-direction:column; overflow:hidden; background:var(--m-bg); color:var(--m-ink); border:1px solid var(--m-line); border-radius:30px; box-sizing:border-box; font:14px/1.55 var(--m-sans); color-scheme:light; }
 #fitness-mono .m-phone * { box-sizing:border-box; }
 #fitness-mono .m-phone [hidden] { display:none !important; }
 #fitness-mono .m-phone button, #fitness-mono .m-phone input, #fitness-mono .m-phone textarea { font:inherit; -webkit-tap-highlight-color:transparent; }
@@ -1817,7 +1829,7 @@ html&gt;body{padding:0}&lt;/style&gt;
 #fitness-mono .m-phone h3 { font-size:15px; font-weight:650; }
 #fitness-mono .m-phone svg, #fitness-mono .m-phone i[data-lucide] { width:18px; height:18px; flex-shrink:0; stroke-width:1.65; }
 #fitness-mono .m-phone button:focus-visible, #fitness-mono .m-phone input:focus-visible, #fitness-mono .m-phone textarea:focus-visible { outline:2px solid currentColor; outline-offset:4px; }
-#fitness-mono .m-appbar { display:flex; align-items:center; justify-content:space-between; padding:20px 21px 16px; }
+#fitness-mono .m-appbar { flex-shrink:0; display:flex; align-items:center; justify-content:space-between; padding:16px 21px 12px; }
 #fitness-mono .m-brand { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:700; letter-spacing:1px; }
 #fitness-mono .m-brand-mark { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; background:var(--m-ink); color:var(--m-onink); }
 #fitness-mono .m-brand-mark svg { width:17px; height:17px; }
@@ -1825,77 +1837,78 @@ html&gt;body{padding:0}&lt;/style&gt;
 #fitness-mono .m-capsule &gt; span { font-weight:750; letter-spacing:1px; line-height:1; }
 #fitness-mono .m-capsule b { height:13px; width:1px; background:var(--m-line); }
 #fitness-mono .m-capsule svg { width:15px; height:15px; }
-#fitness-mono .m-content { padding:10px 20px 24px; flex:1; min-width:0; }
-#fitness-mono .m-welcome { display:flex; justify-content:space-between; align-items:center; gap:12px; margin:0 0 27px; }
+#fitness-mono .m-content { padding:8px 20px 16px; flex:1; min-width:0; min-height:0; overflow-y:auto; overscroll-behavior-y:contain; scrollbar-width:thin; }
+#fitness-mono .m-welcome { display:flex; justify-content:space-between; align-items:center; gap:12px; margin:0 0 16px; }
 #fitness-mono .m-welcome-copy { min-width:0; }
-#fitness-mono .m-date { display:block; color:var(--m-muted); font-size:11px; letter-spacing:.7px; margin-bottom:10px; }
+#fitness-mono .m-date { display:block; color:var(--m-muted); font-size:11px; letter-spacing:.7px; margin-bottom:6px; }
 #fitness-mono .m-welcome h1 { font-size:26px; }
-#fitness-mono .m-welcome p { font-size:12px; color:var(--m-muted); margin-top:6px; }
+#fitness-mono .m-welcome p { font-size:12px; color:var(--m-muted); margin-top:4px; }
 #fitness-mono .m-welcome-avatar { width:43px; height:43px; flex:0 0 43px; object-fit:cover; border:3px solid var(--m-paper); border-radius:50%; filter:grayscale(1); }
-#fitness-mono .m-today-head { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:17px; }
+#fitness-mono .m-today-head { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:14px; }
 #fitness-mono .m-today-title { min-width:0; }
 #fitness-mono .m-phone .m-eyebrow { font-size:11px; color:var(--m-muted); margin-bottom:4px; }
 #fitness-mono .m-today-head h2 { font-size:28px; line-height:1.35; font-weight:750; }
 #fitness-mono .m-check { min-height:46px; min-width:102px; flex:0 0 auto; display:flex; align-items:center; justify-content:center; gap:6px; padding:10px 13px; border:1px solid var(--m-ink); background:transparent; border-radius:28px; font-size:13px !important; font-weight:650 !important; }
 #fitness-mono .m-check svg { width:16px; height:16px; }
 #fitness-mono .m-check:disabled { background:var(--m-ink); color:var(--m-onink); opacity:1; }
-#fitness-mono .m-timer { padding:20px; background:var(--m-ink); color:var(--m-onink); border-radius:24px; }
+#fitness-mono .m-timer { padding:18px; background:var(--m-ink); color:var(--m-onink); border-radius:24px; }
 #fitness-mono .m-timer-top { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:12px; }
 #fitness-mono .m-timer-title { display:flex; align-items:center; gap:7px; }
 #fitness-mono .m-timer-title svg { width:17px; height:17px; }
 #fitness-mono .m-timer-status { display:flex; align-items:center; gap:5px; padding:4px 8px; border-radius:20px; color:var(--m-ondark); background:var(--m-darkline); font-size:11px; }
 #fitness-mono .m-state-dot { display:inline-block; width:5px; height:5px; border-radius:50%; background:currentColor; }
 #fitness-mono .m-timer.is-running .m-timer-status { color:var(--m-onink); }
-#fitness-mono .m-time { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr); gap:6px; align-items:start; padding:25px 0 23px; }
+#fitness-mono .m-time { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr); gap:6px; align-items:start; padding:17px 0 16px; }
 #fitness-mono .m-digit { display:flex; flex-direction:column; align-items:center; gap:5px; min-width:0; }
 #fitness-mono .m-digit strong { font:500 47px/1 var(--m-numbers); font-variant-numeric:tabular-nums; letter-spacing:-1.7px; }
 #fitness-mono .m-digit small { font-size:11px; color:var(--m-ondark); }
 #fitness-mono .m-colon { font:400 37px/1 var(--m-numbers); color:var(--m-ondark); padding-top:1px; }
 #fitness-mono .m-timer-button { min-height:50px; width:100%; display:flex; align-items:center; justify-content:center; gap:9px; padding:12px 16px; border:0; border-radius:26px; background:var(--m-paper); color:var(--m-ink) !important; font-size:15px !important; font-weight:750 !important; }
 #fitness-mono .m-timer-button svg { fill:currentColor; width:16px; height:16px; }
-#fitness-mono .m-timer-foot { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-top:16px; padding-top:13px; border-top:1px solid var(--m-darkline); font-size:11px; color:var(--m-ondark); }
+#fitness-mono .m-timer-foot { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-top:12px; padding-top:10px; border-top:1px solid var(--m-darkline); font-size:11px; color:var(--m-ondark); }
 #fitness-mono .m-timer-foot strong { color:var(--m-onink); font-size:13px; font-weight:550; }
 #fitness-mono .m-notice { display:flex; align-items:center; gap:6px; font-size:11px; margin-top:12px; }
-#fitness-mono .m-summary { display:flex; align-items:center; justify-content:space-between; padding:17px 1px 20px; gap:10px; }
+#fitness-mono .m-summary { display:flex; align-items:center; justify-content:space-between; padding:13px 1px 15px; gap:10px; }
 #fitness-mono .m-summary span { color:var(--m-muted); font-size:11px; display:flex; align-items:baseline; flex-wrap:wrap; gap:5px; }
 #fitness-mono .m-summary strong { color:var(--m-ink); font:500 25px/1.2 var(--m-numbers); letter-spacing:-.5px; }
 #fitness-mono .m-summary small { font-size:11px; }
-#fitness-mono .m-detail { padding:18px; border-radius:22px; background:var(--m-paper); }
+#fitness-mono .m-detail { padding:16px; border-radius:22px; background:var(--m-paper); }
 #fitness-mono .m-detail-head { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:12px; }
 #fitness-mono .m-detail .m-eyebrow { margin-top:4px; margin-bottom:0; }
-#fitness-mono .m-set-controls { display:flex; align-items:center; gap:4px; margin-top:9px; }
+#fitness-mono .m-set-controls { display:flex; align-items:center; gap:4px; margin-top:5px; }
 #fitness-mono .m-count { display:flex; justify-content:flex-end; align-items:baseline; gap:4px; font-size:11px; color:var(--m-muted); }
 #fitness-mono .m-count strong { font:500 27px/1 var(--m-numbers); color:var(--m-ink); }
 #fitness-mono .m-set-add, #fitness-mono .m-set-reset { min-height:44px; min-width:44px; padding:8px 10px; border-radius:25px; font-size:11px !important; white-space:nowrap; }
 #fitness-mono .m-set-add { background:var(--m-ink); color:var(--m-onink) !important; border:0; font-weight:650 !important; }
 #fitness-mono .m-set-reset { background:transparent; color:var(--m-muted) !important; border:0; }
-#fitness-mono .m-exercises { margin-top:14px; padding:0; list-style:none; }
-#fitness-mono .m-exercise { display:flex; align-items:center; gap:10px; padding:13px 0; border-top:1px solid var(--m-line); font-size:13px; overflow-wrap:anywhere; }
+#fitness-mono .m-exercises { margin:10px 0 0; padding:0; list-style:none; }
+#fitness-mono .m-exercise { display:flex; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--m-line); font-size:13px; overflow-wrap:anywhere; }
 #fitness-mono .m-exercise:last-child { padding-bottom:0; }
 #fitness-mono .m-exercise::before { content:&quot;&quot;; width:6px; height:6px; flex:0 0 6px; border:1.5px solid var(--m-ink); border-radius:50%; }
 #fitness-mono .m-phone .m-note { color:var(--m-muted); font-size:11px; margin-top:10px; }
-#fitness-mono .m-runningbar { display:flex; width:100%; justify-content:space-between; align-items:center; gap:10px; padding:11px 13px; margin-bottom:17px; min-height:46px; border:0; border-radius:14px; background:var(--m-ink); color:var(--m-onink) !important; font-size:11px !important; }
+#fitness-mono .m-runningbar { display:flex; width:100%; justify-content:space-between; align-items:center; gap:10px; padding:10px 13px; margin-bottom:12px; min-height:44px; border:0; border-radius:14px; background:var(--m-ink); color:var(--m-onink) !important; font-size:11px !important; }
 #fitness-mono .m-runningbar &gt; span { display:flex; align-items:center; gap:7px; }
 #fitness-mono .m-runningbar strong { font-family:var(--m-numbers); font-weight:500; }
 #fitness-mono .m-runningbar svg { width:15px; height:15px; }
-#fitness-mono .m-pagehead { margin:0 0 22px; }
-#fitness-mono .m-pagehead p { font-size:12px; color:var(--m-muted); margin-top:8px; }
-#fitness-mono .m-weeks { display:grid; grid-template-columns:1fr 1fr; gap:5px; padding:5px; border-radius:28px; background:var(--m-paper); margin-bottom:14px; }
+#fitness-mono .m-pagehead { margin:0 0 16px; }
+#fitness-mono .m-pagehead p { font-size:12px; color:var(--m-muted); margin-top:5px; }
+#fitness-mono .m-weeks { display:grid; grid-template-columns:1fr 1fr; gap:4px; padding:4px; border-radius:28px; background:var(--m-paper); margin-bottom:8px; }
 #fitness-mono .m-weeks button { min-height:44px; background:transparent; border:0; border-radius:23px; color:var(--m-muted); font-size:13px; }
 #fitness-mono .m-weeks button[aria-pressed=&quot;true&quot;] { background:var(--m-ink); color:var(--m-onink); font-weight:650; }
-#fitness-mono .m-repeat { display:flex; align-items:center; justify-content:space-between; gap:10px; min-height:48px; padding:1px 3px 12px; font-size:12px; }
+#fitness-mono .m-repeat { display:flex; align-items:center; justify-content:space-between; gap:10px; min-height:44px; padding:0 3px 8px; font-size:12px; }
 #fitness-mono .m-repeat input { appearance:none; width:40px; height:24px; padding:3px; margin:0; border:0; border-radius:20px; background:var(--m-fill); color:var(--m-paper); }
 #fitness-mono .m-repeat input::before { content:&quot;&quot;; display:block; width:18px; height:18px; background:var(--m-paper); border-radius:50%; transition:transform 160ms ease; }
 #fitness-mono .m-repeat input:checked { background:var(--m-ink); }
 #fitness-mono .m-repeat input:checked::before { transform:translateX(16px); }
-#fitness-mono .m-days { display:flex; flex-direction:column; gap:8px; }
-#fitness-mono .m-day { width:100%; display:grid; grid-template-columns:42px minmax(0,1fr) auto; gap:12px; align-items:center; padding:15px 13px; min-height:76px; border:0; border-radius:18px; background:var(--m-paper); text-align:left; }
+#fitness-mono .m-days { display:flex; flex-direction:column; gap:6px; }
+#fitness-mono .m-day { width:100%; display:grid; grid-template-columns:38px minmax(0,1fr) auto; gap:10px; align-items:center; padding:6px 12px; min-height:56px; border:0; border-radius:16px; background:var(--m-paper); text-align:left; }
 #fitness-mono .m-day-date { display:flex; flex-direction:column; align-items:center; gap:1px; }
 #fitness-mono .m-day-date strong { font:500 25px/1 var(--m-numbers); }
 #fitness-mono .m-day-date small { font-size:11px; color:var(--m-muted); }
 #fitness-mono .m-day-title { display:block; font-size:14px; font-weight:650; overflow-wrap:anywhere; }
-#fitness-mono .m-day-goal { display:block; font-size:11px; color:var(--m-muted); margin-top:4px; overflow-wrap:anywhere; }
-#fitness-mono .m-day-status { display:flex; flex-direction:column; align-items:flex-end; gap:5px; font-size:11px; color:var(--m-muted); white-space:nowrap; }
+#fitness-mono .m-day-goal { display:block; font-size:11px; color:var(--m-muted); margin-top:3px; overflow-wrap:anywhere; }
+#fitness-mono .m-day-status { display:grid; grid-template-columns:auto auto; justify-content:end; align-items:center; gap:2px 4px; text-align:right; font-size:11px; color:var(--m-muted); white-space:nowrap; }
+#fitness-mono .m-day-status b { grid-column:1 / -1; }
 #fitness-mono .m-day-status svg { width:14px; height:14px; }
 #fitness-mono .m-day.is-past { color:var(--m-muted); opacity:1; background:var(--m-soft); }
 #fitness-mono .m-day.is-today { background:var(--m-ink); color:var(--m-onink); }
@@ -1910,12 +1923,12 @@ html&gt;body{padding:0}&lt;/style&gt;
 #fitness-mono .m-button { min-height:48px; display:flex; align-items:center; justify-content:center; gap:8px; width:100%; padding:12px 15px; border:0; border-radius:26px; background:var(--m-ink); color:var(--m-onink) !important; font-size:14px !important; font-weight:650 !important; }
 #fitness-mono .m-secondary { background:var(--m-soft); color:var(--m-ink) !important; }
 #fitness-mono .m-editor-actions { display:grid; grid-template-columns:1fr 1.5fr; gap:10px; }
-#fitness-mono .m-chart-panel { padding:19px 17px 16px; background:var(--m-paper); border-radius:23px; }
+#fitness-mono .m-chart-panel { padding:17px 17px 14px; background:var(--m-paper); border-radius:23px; }
 #fitness-mono .m-chart-title { display:flex; justify-content:space-between; align-items:baseline; gap:8px; }
 #fitness-mono .m-chart-title span { font-size:11px; color:var(--m-muted); }
-#fitness-mono .m-chart { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:10px; margin-top:24px; }
+#fitness-mono .m-chart { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:10px; margin-top:20px; }
 #fitness-mono .m-bar-col { min-width:0; display:flex; flex-direction:column; align-items:center; gap:10px; }
-#fitness-mono .m-bar-area { width:100%; height:168px; display:flex; align-items:center; flex-direction:column; justify-content:flex-end; }
+#fitness-mono .m-bar-area { width:100%; height:148px; display:flex; align-items:center; flex-direction:column; justify-content:flex-end; }
 #fitness-mono .m-bar-value { font:500 13px/1.5 var(--m-numbers); margin-bottom:7px; white-space:nowrap; }
 #fitness-mono .m-bar { width:80%; max-width:23px; min-height:0; background:var(--m-fill); border-radius:6px 6px 3px 3px; }
 #fitness-mono .m-bar.is-today { background:var(--m-ink); }
@@ -1951,13 +1964,13 @@ html&gt;body{padding:0}&lt;/style&gt;
 #fitness-mono .m-profile .m-field { margin-bottom:27px; }
 #fitness-mono .m-profile-notice { font-size:12px; margin-top:13px; display:flex; justify-content:center; align-items:center; gap:6px; }
 #fitness-mono .m-profile-error { font-size:12px; margin-bottom:13px; padding:9px 10px; background:var(--m-soft); border-radius:10px; }
-#fitness-mono .m-dock { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:5px; margin:0 17px 7px; padding:9px 7px 8px; border-radius:27px; background:var(--m-paper); }
-#fitness-mono .m-nav { display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px; min-height:58px; padding:0; border:0; background:transparent; font-size:11px !important; color:var(--m-muted) !important; }
+#fitness-mono .m-dock { flex-shrink:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:5px; margin:0 17px 6px; padding:6px 7px; border-radius:27px; background:var(--m-paper); }
+#fitness-mono .m-nav { display:flex; flex-direction:column; justify-content:center; align-items:center; gap:3px; min-height:52px; padding:0; border:0; background:transparent; font-size:11px !important; color:var(--m-muted) !important; }
 #fitness-mono .m-nav-icon { display:grid; place-items:center; width:42px; height:32px; border-radius:18px; }
 #fitness-mono .m-nav svg { width:20px; height:20px; }
 #fitness-mono .m-nav[aria-current=&quot;page&quot;] { font-weight:650; color:var(--m-ink) !important; }
 #fitness-mono .m-nav[aria-current=&quot;page&quot;] .m-nav-icon { background:var(--m-ink); color:var(--m-onink); }
-#fitness-mono .m-homebar { display:flex; align-items:center; justify-content:center; height:17px; }
+#fitness-mono .m-homebar { flex-shrink:0; display:flex; align-items:center; justify-content:center; height:19px; }
 #fitness-mono .m-homebar::after { content:&quot;&quot;; width:96px; height:4px; background:var(--m-ink); border-radius:5px; }
 @media(max-width:370px) {
   #fitness-mono .m-phone { border-radius:23px; }
@@ -2104,7 +2117,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     return `${runningBar()}&lt;header class=&quot;m-pagehead&quot;&gt;&lt;h1&gt;训练记录&lt;/h1&gt;&lt;p&gt;本周 · 10 月 26 日 — 11 月 1 日&lt;/p&gt;&lt;/header&gt;
       &lt;section class=&quot;m-chart-panel&quot; aria-label=&quot;本周每日训练时长&quot;&gt;
         &lt;div class=&quot;m-chart-title&quot;&gt;&lt;h2&gt;每日训练时长&lt;/h2&gt;&lt;span&gt;分钟&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;m-chart&quot; role=&quot;img&quot; aria-label=&quot;${safe(summary)}&quot;&gt;${values.map((value,index)=&gt;`&lt;div class=&quot;m-bar-col ${index===4?&#x27;is-today&#x27;:&#x27;&#x27;}&quot;&gt;&lt;div class=&quot;m-bar-area&quot;&gt;${value==null?&#x27;&lt;span class=&quot;m-future&quot;&gt;未到&lt;/span&gt;&#x27;:`&lt;span class=&quot;m-bar-value&quot;&gt;${Math.floor(value)}&lt;/span&gt;&lt;div class=&quot;m-bar ${index===4?&#x27;is-today&#x27;:&#x27;&#x27;}&quot; style=&quot;height:${Math.max(0,value/max*137)}px&quot;&gt;&lt;/div&gt;`}&lt;/div&gt;&lt;span class=&quot;m-bar-day&quot;&gt;${index===4?&#x27;今天&#x27;:`周${DAYS[index]}`}&lt;/span&gt;&lt;/div&gt;`).join(&#x27;&#x27;)}&lt;/div&gt;
+        &lt;div class=&quot;m-chart&quot; role=&quot;img&quot; aria-label=&quot;${safe(summary)}&quot;&gt;${values.map((value,index)=&gt;`&lt;div class=&quot;m-bar-col ${index===4?&#x27;is-today&#x27;:&#x27;&#x27;}&quot;&gt;&lt;div class=&quot;m-bar-area&quot;&gt;${value==null?&#x27;&lt;span class=&quot;m-future&quot;&gt;未到&lt;/span&gt;&#x27;:`&lt;span class=&quot;m-bar-value&quot;&gt;${Math.floor(value)}&lt;/span&gt;&lt;div class=&quot;m-bar ${index===4?&#x27;is-today&#x27;:&#x27;&#x27;}&quot; style=&quot;height:${Math.max(0,value/max*117)}px&quot;&gt;&lt;/div&gt;`}&lt;/div&gt;&lt;span class=&quot;m-bar-day&quot;&gt;${index===4?&#x27;今天&#x27;:`周${DAYS[index]}`}&lt;/span&gt;&lt;/div&gt;`).join(&#x27;&#x27;)}&lt;/div&gt;
         &lt;p class=&quot;m-chart-foot&quot;&gt;${state.startedAt!=null?&#x27;本次训练中，结束后计入今天。&#x27;:&#x27;统计至今天 · 只计入已结束的训练&#x27;}&lt;/p&gt;
       &lt;/section&gt;
       &lt;section class=&quot;m-month-card&quot;&gt;&lt;div&gt;&lt;h2&gt;本月累计打卡&lt;/h2&gt;&lt;p&gt;10 月 · 每天最多计 1 次&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;m-month-number&quot;&gt;&lt;strong&gt;${12+(state.checked?1:0)}&lt;/strong&gt;&lt;span&gt;天&lt;/span&gt;&lt;/div&gt;&lt;/section&gt;
@@ -2159,7 +2172,9 @@ html&gt;body{padding:0}&lt;/style&gt;
       const form=product.querySelector(&#x27;[data-plan-form]&#x27;),title=form.elements.namedItem(&#x27;title&#x27;).value.trim();
       state.plans[`${state.week}-${state.editing}`]={title,goal:title?form.elements.namedItem(&#x27;goal&#x27;).value.trim():&#x27;&#x27;};state.editing=null;
     }
-    render();persist();
+    render();
+    if([&#x27;page&#x27;,&#x27;back-timer&#x27;,&#x27;week&#x27;,&#x27;edit-day&#x27;,&#x27;cancel-edit&#x27;,&#x27;save-plan&#x27;].includes(action))product.querySelector(&#x27;.m-content&#x27;).scrollTop=0;
+    persist();
   });
   product.addEventListener(&#x27;input&#x27;,event=&gt;{
     if(event.target.matches(&#x27;[data-nickname]&#x27;)) {state.draftName=event.target.value;state.profileNotice=&#x27;&#x27;;const notice=product.querySelector(&#x27;[data-profile-notice]&#x27;);if(notice)notice.hidden=true;}
