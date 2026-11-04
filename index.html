@@ -2013,6 +2013,7 @@ html,body { height:100%; margin:0; padding:0; overflow:hidden; }
   const safe=value=&gt;String(value??&#x27;&#x27;).replace(/[&amp;&lt;&gt;&quot;&#x27;]/g,char=&gt;({&#x27;&amp;&#x27;:&#x27;&amp;amp;&#x27;,&#x27;&lt;&#x27;:&#x27;&amp;lt;&#x27;,&#x27;&gt;&#x27;:&#x27;&amp;gt;&#x27;,&#x27;&quot;&#x27;:&#x27;&amp;quot;&#x27;,&quot;&#x27;&quot;:&#x27;&amp;#39;&#x27;}[char]));
   const icon=name=&gt;`&lt;i data-lucide=&quot;${name}&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;`;
   const nameOf=value=&gt;typeof value===&#x27;string&#x27;&amp;&amp;value.trim()?value.trim().slice(0,20):&#x27;健身者&#x27;;
+  const greetingForHour=hour=&gt;hour&lt;12?&#x27;早上好&#x27;:hour&lt;18?&#x27;下午好&#x27;:&#x27;晚上好&#x27;;
   const clock=seconds=&gt;{
     const n=Math.max(0,Math.floor(seconds));
     return [Math.floor(n/3600),Math.floor(n/60)%60,n%60].map(v=&gt;String(v).padStart(2,&#x27;0&#x27;));
@@ -2061,7 +2062,7 @@ html,body { height:100%; margin:0; padding:0; overflow:hidden; }
     const goals=(p.goal||&#x27;&#x27;).split(/[,，]/).map(item=&gt;item.trim()).filter(Boolean);
     const running=state.startedAt!=null;
     return `&lt;header class=&quot;m-welcome&quot;&gt;
-      &lt;div class=&quot;m-welcome-copy&quot;&gt;&lt;span class=&quot;m-date&quot;&gt;10 月 30 日 · 星期五&lt;/span&gt;&lt;h1&gt;晚上好，${safe(state.nickname)}。&lt;/h1&gt;&lt;p&gt;今天也动起来。&lt;/p&gt;&lt;/div&gt;
+      &lt;div class=&quot;m-welcome-copy&quot;&gt;&lt;span class=&quot;m-date&quot;&gt;10 月 30 日 · 星期五&lt;/span&gt;&lt;h1&gt;&lt;span data-greeting&gt;${greetingForHour(new Date().getHours())}&lt;/span&gt;，${safe(state.nickname)}。&lt;/h1&gt;&lt;p&gt;今天也动起来。&lt;/p&gt;&lt;/div&gt;
       &lt;img class=&quot;m-welcome-avatar&quot; src=&quot;${safe(state.avatar||DEFAULT_AVATAR)}&quot; alt=&quot;我的头像&quot;&gt;
     &lt;/header&gt;
     &lt;section class=&quot;m-today-head&quot; aria-label=&quot;今日训练与打卡&quot;&gt;
@@ -2223,6 +2224,8 @@ html,body { height:100%; margin:0; padding:0; overflow:hidden; }
   }
   const ticker=setInterval(()=&gt;{
     if(!root.isConnected) {clearInterval(ticker);return;}
+    const greeting=product.querySelector(&#x27;[data-greeting]&#x27;);
+    if(greeting)greeting.textContent=greetingForHour(new Date().getHours());
     if(state.startedAt==null)return;
     const parts=clock(elapsed());
     product.querySelectorAll(&#x27;[data-clock-part]&#x27;).forEach(node=&gt;{node.textContent=parts[Number(node.dataset.clockPart)];});
